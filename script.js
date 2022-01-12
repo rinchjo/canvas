@@ -130,12 +130,12 @@ class Ball {
 
 let balls = [];
 
-for (let i = 0; i < 300; i++) {
-  let radius = 5;
-  let x = ctx.width / 2
-  let y = ctx.height / 2
-  let xv = (Math.random() - .5) * 5;
-  let yv = (Math.random() - .5) * 5;
+for (let i = 0; i < 50; i++) {
+  let radius = 20;
+  let x = Math.random() * (ctx.height - radius * 2) + radius;
+  let y = Math.random() * (ctx.height - radius * 2) + radius;
+  let xv = (Math.random() - .5) * 10;
+  let yv = (Math.random() - .5) * 10;
   let red = Math.floor(Math.random() * 256);
   let green = Math.floor(Math.random() * 256);
   let blue = Math.floor(Math.random() * 256);
