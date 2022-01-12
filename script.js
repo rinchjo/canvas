@@ -132,7 +132,7 @@ let balls = [];
 
 for (let i = 0; i < 50; i++) {
   let radius = 20;
-  let x = Math.random() * (ctx.height - radius * 2) + radius;
+  let x = Math.random() * (ctx.width - radius * 2) + radius;
   let y = Math.random() * (ctx.height - radius * 2) + radius;
   let xv = (Math.random() - .5) * 10;
   let yv = (Math.random() - .5) * 10;
