@@ -6,12 +6,17 @@ ctx.height = 500;
 
 var x = ctx.width / 2;
 var y = ctx.height / 2;
-var x2 = ctx.width / 2;
-var y2 = ctx.height / 2;
+var x2 = ctx.width / 3;
+var y2 = ctx.height / 3;
 
 var xvelocity =
   Math.random() < 0.5 ? -0.8 * Math.random() : 0.8 * Math.random();
 var yvelocity =
+  Math.random() < 0.5 ? -0.75 * Math.random() : 0.75 * Math.random();
+
+var x2Velocity =
+  Math.random() < 0.5 ? -0.8 * Math.random() : 0.8 * Math.random();
+var y2Velocity =
   Math.random() < 0.5 ? -0.75 * Math.random() : 0.75 * Math.random();
 
 //
@@ -38,6 +43,9 @@ function drawBall() {
   c.beginPath();
   c.arc(x, y, 50, 0, Math.PI * 2);
   c.fill();
+  c.beginPath();
+  c.arc(x2, y2, 50, 0, Math.PI * 2);
+  c.fill();
   // x += 5
 }
 
@@ -52,6 +60,16 @@ function moveBall() {
   }
   x += 10 * xvelocity;
   y += 10 * yvelocity;
+
+  if (x2 >= ctx.width - 50 || x2 <= 50) {
+    x2Velocity *= -1;
+  }
+
+  if (y2 >= ctx.height - 50 || y2 <= 50) {
+    y2Velocity *= -1;
+  }
+  x2 += 10 * x2Velocity;
+  y2 += 10 * y2Velocity;
 }
 
 // setInterval(drawBall , 1000/60)
